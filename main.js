@@ -1,12 +1,5 @@
 //Wait until the DOM is ready
 window.addEventListener("DOMContentLoaded", function(){
-
-	var comingSoon = function (){
-		alert("Coming soon:\n-iOS and Android Native Features Information\n-JSON-P APIs\n-Research Week 2 and Week 3");
-	}
-
-	comingSoon();
-	
 	
 var twitterSearch = function () {
 $.ajax({
@@ -21,12 +14,12 @@ $.ajax({
                     $( ' ' + 
 					'<div class="tweetsIn">' +
 					'<ul>' +
-					'<li> Tweet Created: ' + item.created_at + '</li>' +
+					'<p><li><img src="'+ item.profile_image_url + '" id="tweetImg"/></li>' +
 					'<li> User ID: ' + item.from_user_id + '</li>' +
 					'<li> Screen Name: ' + item.from_user_name + '</li>' +
-					'<li> Full Name: ' + item.from_user + '</li>' +
-					'<li> Profile Image: <img src="'+ item.profile_image_url + '"/></li>' +
-					'<li> Tweet: ' + item.text + '</li>' +
+					'<li> Full Name: ' + item.from_user + '</li></p>' +
+					'<li> Tweet Created: ' + item.created_at + '</li>' +					
+					'<li> Tweet: ' + item.text + '</li></p>' +
 					'</ul>' +
 					'<br>' +
 					'</div>'
@@ -51,11 +44,14 @@ $.ajax({
             $(' ' +
             	'<div class="tvIn">' +
             	'<ul>' +
-            	'<li>' + item.show.title +'</li>'+
-            	'<li>' + item.show.year +'</li>'+
-            	'<li>' + item.show.url +'</li>'+
-            	'<li>' + item.show.overview +'</li>'+
-            	'<li><img src="' + item.show.images.poster +'"/></li>'+
+            	'<p><li><img src="' + item.show.images.poster +'" id="showImg"/></li>'+
+            	'<li> Name of Show: ' + item.show.title +'</li>'+
+            	'<li> Network Channel: ' + item.show.network +'</li>'+
+            	'<li> Show Website: ' + item.show.url +'</li></p>'+
+            	'<p><li> Country: ' + item.show.country +'</li>'+
+            	'<li> Day of Show: ' + item.show.air_day +'</li>'+
+            	'<li> Time of Show: ' + item.show.air_time +'</li></p>'+
+            	'<p><li> Overview: ' + item.show.overview +'</li></p>'+
             	'</ul>' +
             	'<br>' +
             	'</div>'
